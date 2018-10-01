@@ -1,0 +1,8 @@
+name: workers
+publish_to: none
+dependencies:
+  json_rpc_2: ^2.0.0
+  stream_channel: ^1.0.0
+dev_dependencies:
+  build_runner: ^0.10.0
+  build_web_compilers: ^0.4.0
