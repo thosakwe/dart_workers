@@ -1,3 +1,4 @@
+import 'package:js/js.dart';
 import 'package:stream_channel/stream_channel.dart';
 import 'interop.dart';
 
@@ -5,7 +6,7 @@ void main() {
   // Just like in `main.dart`, create a StreamChannel<String>
   // by means of a StreamChannelController<String>.
   var ctrl = new StreamChannelController<String>();
-  onMessage = (e) => ctrl.local.sink.add(e.data as String);
+  onMessage = allowInterop((e) => ctrl.local.sink.add(e.data as String));
   ctrl.local.stream.listen(postMessage);
 
   // Send a message, just like before, but using the
